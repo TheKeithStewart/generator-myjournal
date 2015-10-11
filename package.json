@@ -1,7 +1,7 @@
 {
   "name": "generator-myjournal",
   "version": "0.0.0",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator to generate journal entries",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "kgs916/generator-myjournal",

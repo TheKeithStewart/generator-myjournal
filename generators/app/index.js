@@ -13,10 +13,10 @@ module.exports = yeoman.generators.Base.extend({
             ));
 
         var prompts = [{
-            type: 'confirm',
-            name: 'someOption',
-            message: 'Would you like to enable this option?',
-            default: true
+            type: 'text',
+            name: 'rootName',
+            message: 'What would you like to call your root directory?',
+            default: 'journal'
         }];
 
         this.prompt(prompts, function (props) {
@@ -28,8 +28,10 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: {
-        dir: function() {
-            this.mkdir('journal');
+        dir: function () {
+            if (!this.fs.exists(this.props.rootName)) {
+                this.mkdir(this.props.rootName);
+            }
         }
     }
 });

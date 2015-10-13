@@ -22,7 +22,7 @@ module.exports = yeoman.generators.Base.extend({
         var month = today.getMonth() + 1;
         var day = today.getDate();
         var fileName = 'date' + year + '-' + month + '-' + day + '.md';
-        var path = this.journalName + '/';
+        var path = this.journalName + '/entries/';
 
         if (this.fs.exists(path + fileName)) {
             this.log('The journal file your are requesting already exists.');

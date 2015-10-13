@@ -12,8 +12,8 @@ module.exports = yeoman.generators.Base.extend({
         if (!this.journalName) {
             this.journalName = "myjournal";
         }
-        
-        this.log("You creating a journal file for the '" + this.journalName + "' journal series.");
+
+        this.log("You are creating a journal file for the '" + this.journalName + "' journal series.");
     },
 
     writing: function () {
@@ -27,7 +27,11 @@ module.exports = yeoman.generators.Base.extend({
         if (this.fs.exists(path + fileName)) {
             this.log('The journal file your are requesting already exists.');
         } else {
-            this.fs.copy(this.templatePath('journal.md'), this.destinationPath(path + fileName));
+            this.fs.copyTpl(
+                this.templatePath('_journal.md'),
+                this.destinationPath(path + fileName),
+                { date: year + '-' + month + '-' + day, journalName: this.journalName }
+            );
         }
     }
 });

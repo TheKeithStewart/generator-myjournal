@@ -25,7 +25,9 @@ module.exports = yeoman.generators.Base.extend({
         var today = new Date();
         var year = today.getFullYear();
         var month = today.getMonth() + 1;
+        month = pad(month, 2);
         var day = today.getDate();
+        day = pad(day, 2);
         var fileName = (this.subSeriesName ? this.subSeriesName + "_" : "") + year + '-' + month + '-' + day + '.md';
         var path = this.seriesName + '/';
 
@@ -44,3 +46,9 @@ module.exports = yeoman.generators.Base.extend({
         }
     }
 });
+
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}

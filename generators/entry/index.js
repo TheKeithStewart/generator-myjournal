@@ -38,9 +38,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.templatePath('_journal.md'),
                 this.destinationPath(path + fileName),
                 {
-                    date: year + '-' + month + '-' + day, 
-                    seriesName: this.seriesName,
-                    subSeriesName: this.subSeriesName
+                    date: year + '-' + month + '-' + day
                 }
             );
         }

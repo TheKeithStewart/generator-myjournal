@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-ttp://kgs916.github.io/generator-myjournal/
+http://kgs916.github.io/generator-myjournal/
 
 ## Getting Started
 
